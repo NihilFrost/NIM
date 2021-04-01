@@ -1,0 +1,31 @@
+*
+    box-sizing: border-box
+    background-color: white
+.wrapper
+    width: 300px
+    margin-top: 100px
+    margin-left: 50px
+    padding: 20px
+.container
+    border: 1px solid grey
+    margin-bottom: 20px
+    padding: 20px
+.line
+    margin-bottom: 15px
+    display: flex
+    border: 1px solid lightgrey
+    &--red
+        border: 1px solid red
+    &__item
+        width: 20px
+        height: 20px
+        margin-right: 20px
+        &--visible
+            background-color: black
+            z-index: 0
+        &--marked
+            background-color: red
+            z-index: 0
+        &--unvisible
+            background-color: transparent
+            z-index: -1
