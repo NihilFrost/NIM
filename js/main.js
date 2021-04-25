@@ -49,31 +49,10 @@ $(document).ready(function() {
         chip.toggleClass("line__item--marked");
     });
 
-    // $(Item).on("mouseup", function() {
-    //     let chip = $(this);
-    //     chip.toggleClass("line__item--marked");
-    // });
-
-
-
-    // $(Item).on("click", function(event) {
-    //     // Клик по фишке и передаём её в this
-
-    //     let thisParent = $(".line__item").parent(".line"); // Обращаемся к родителю фишки (её диву)
-    //     // thisParent.addClass("line--marked");
-
-    //     let allItems = $("div.line__item--marked"); // Количество всех выбранных элементов
-
-    //     if (linesOfDiv.length < 1) {
-    //         // Если выбрана только одна линия - красим текущую фишку
-    //         $(this).toggleClass("line__item--marked");
-    //     } else {
-    //         linesOfDiv.removeClass("line--marked");
-    //         allItems.removeClass("line__item--marked");
-    //     }
-
-
-    // });
+    $(".button").on("click", function() {
+        let chips = $("div.line__item--marked");
+        chips.addClass("line__item--unvisible");
+    });
 
 
 
