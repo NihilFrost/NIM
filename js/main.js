@@ -1,23 +1,9 @@
 $(document).ready(function() {
 
 
-
-    // $(".line").on("click", function() {
-    //     // Щёлкаем по линии 
-    //     // Красим линию
-    //     $(this).addClass("line--marked");
-    //     // Ищем все помеченные линии
-    //     lol = $(this);
-    //     console.log(lol);
-    //     let linesOfDiv = $("div.line--marked");
-    //     if (linesOfDiv.length < 1) {
-
-    //     }
-    // });
-
     $(".line").on("mousedown", function() {
         let line = $(this);
-        let checkedId = line[0]["id"];
+        // let checkedId = line[0]["id"];
 
         // Помечаем новую линию
         line.addClass("line--marked");
@@ -25,9 +11,9 @@ $(document).ready(function() {
         // Осуществляем поиск всех элементов с классом line--marked
         let linesOfDiv = $("div.line--marked");
 
-        let bool = linesOfDiv;
+        // let bool = linesOfDiv;
 
-        console.log(bool);
+        // console.log(bool);
 
         // Если количество помеченных линий > 1
         if (linesOfDiv.length > 1) {
@@ -52,6 +38,28 @@ $(document).ready(function() {
     $(".button").on("click", function() {
         let chips = $("div.line__item--marked");
         chips.addClass("line__item--unvisible");
+        chips.removeClass("line__item--visible");
+        // Надо пересчитать все фишки на каждой строке и результат запихнуть в скрипт
+        let id = 1;
+        let obj = {};
+        let row = 1;
+        let countOfChips;
+        // result: obj[row] = countOfChips
+
+        while (document.getElementById(id) != null) {
+            countOfChips = $(`.line#${id} .line__item--visible`).length;
+            obj[row] = countOfChips;
+            id++;
+            row++;
+        }
+        console.log(obj);
+
+
+
+        let reminder = $(".line#3 .line__item--visible");
+
+
+
     });
 
 
